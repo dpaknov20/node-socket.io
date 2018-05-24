@@ -1,6 +1,6 @@
 {
-  "name": "Node.js Socket.io Robot Connection Example",
-  "description": "Part of the Robot control webapp",
-  "repository": "https://github.com/dpaknov20/node-socket.io",
+  "name": "Node.js Socket.io Example",
+  "description": "Part of the Using WebSockets on Heroku Tutorial",
+  "repository": "https://github.com/heroku-examples/node-socket.io",
   "keywords": ["node", "websocket", "socket.io"]
 }
