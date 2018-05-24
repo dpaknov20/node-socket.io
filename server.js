@@ -3,9 +3,13 @@
 const express = require('express');
 const socketIO = require('socket.io');
 const path = require('path');
-
+var app = require('express')();
 const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
+
+app.get('/robot', function (req, res) {
+  res.sendfile(__dirname + '/robot.html');
+});
 
 const server = express()
   .use((req, res) => res.sendFile(INDEX) )
