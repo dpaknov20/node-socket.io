@@ -5,17 +5,12 @@ const socketIO = require('socket.io');
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
-
+const ROBOT = path.join(__dirname, 'robot.html');
 const server = express()
-  //.use((req, res) => res.sendFile(INDEX) )
-
+  .use((req, res) => res.sendFile(INDEX) )
+.use('/robot',(req, res) => res.sendFile(ROBOT) )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-server.get('/robot', function (req, res) {
-  res.send('Hello World!')
-})
-server.get('/', function (req, res) {
-   res.sendFile(path.join(__dirname, 'index.html'));
-})
+
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
